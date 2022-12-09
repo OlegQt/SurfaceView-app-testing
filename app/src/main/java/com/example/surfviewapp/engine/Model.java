@@ -17,7 +17,6 @@ public class Model {
         this.screenWidth = w;
     }
 
-
     // Add Random point into ArrayList
     public void update(long elapsedTime) {
         Random pRandom = new Random();
@@ -38,7 +37,6 @@ public class Model {
             }
         }
     }
-
     // Return full ArrayList of points
     public ArrayList<Star> getPointsArray() {
         return this.starArray;
