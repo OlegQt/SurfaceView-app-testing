@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnAction.setOnClickListener(view -> {
-            btnAction.setText(BTNNEWORDER);
-            finish();
+            btnAction.setText(this.engine.GetCurrentPointsCount());
+            //finish();
         });
 
     }

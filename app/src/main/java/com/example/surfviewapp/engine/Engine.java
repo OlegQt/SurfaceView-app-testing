@@ -31,6 +31,7 @@ public class Engine {
                         }
                     }
                 } else {
+                    model.setScreenSize(canvas.getWidth(),canvas.getHeight());
                     long elapsedTime = System.nanoTime() - time;
                     model.update(elapsedTime);
                     render.draw(canvas, model);
@@ -71,5 +72,14 @@ public class Engine {
             }
         };
         surface.getHolder().addCallback(callBack);
+    }
+
+    public String GetCurrentPointsCount()
+    {
+        if(this.model!=null){
+            int count = model.getPointsArray().size();
+            return String.valueOf(count);
+        }
+        else return "Error";
     }
 }
