@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // CODE HER
         btnAction = findViewById(R.id.btn1);
         surface = findViewById(R.id.surface);
-        sld= findViewById(R.id.sld);
+        //sld= findViewById(R.id.sld);
 
         // Запуск потока
         engine=new Engine(surface);
@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
             btnAction.setText(this.engine.GetCurrentPointsCount());
         });
 
-        sld.addOnChangeListener((slider, value, fromUser) -> {
-            this.engine.setSpeedFly(value);
-        });
+        //sld.addOnChangeListener((slider, value, fromUser) -> {
+        //    this.engine.setSpeedFly(value);
+        //});
 
     }
 

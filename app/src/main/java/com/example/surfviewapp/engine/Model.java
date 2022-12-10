@@ -40,7 +40,7 @@ public class Model {
         while (iterator.hasNext()) {
             Star pS = iterator.next();
             pS.moveStar(elapsedTime);
-            pS.spiral(screenWidth / 2, screenHeight / 2,0.001);
+            //pS.spiral(screenWidth / 2, screenHeight / 2,0.001);
 
             if (pS.getDistance(screenWidth / 2, screenHeight / 2) > 1000) {
                 iterator.remove();
