@@ -7,7 +7,7 @@ import java.util.Random;
 public class Model {
     private ArrayList<Star> starArray = null;
     private int screenHeight, screenWidth;
-    private final int MAX_COUNT = 17000;
+    private final int MAX_COUNT = 17000; // Ограничить количество элементов массива
     private double speedIncrement;
 
     public Model() {

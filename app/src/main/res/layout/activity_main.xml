@@ -34,8 +34,6 @@
             />
     </LinearLayout>
 
-
-
     <SurfaceView
         android:id="@+id/surface"
         android:layout_width="match_parent"
