@@ -12,8 +12,8 @@ public class Engine {
 
     private SurfaceHolder surfaceHolder;
     private SurfaceHolder.Callback callBack;
-    private boolean stopped;
 
+    private boolean stopped;
     long time = System.nanoTime();
 
     Runnable thread = new Runnable() {
@@ -74,12 +74,15 @@ public class Engine {
         surface.getHolder().addCallback(callBack);
     }
 
-    public String GetCurrentPointsCount()
-    {
+    public String GetCurrentPointsCount() {
         if(this.model!=null){
             int count = model.getPointsArray().size();
             return String.valueOf(count);
         }
         else return "Error";
+    }
+
+    public void setSpeedFly(float val){
+        this.model.setSpeed(val);
     }
 }

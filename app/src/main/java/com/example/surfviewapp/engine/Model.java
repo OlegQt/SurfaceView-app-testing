@@ -7,6 +7,8 @@ import java.util.Random;
 public class Model {
     private ArrayList<Star> starArray = null;
     private int screenHeight, screenWidth;
+    private final int MAX_COUNT = 17000;
+    private double speedIncrement;
 
     public Model() {
         this.starArray = new ArrayList<>();
@@ -17,14 +19,20 @@ public class Model {
         this.screenWidth = w;
     }
 
+    public void setSpeed(double val) {
+        speedIncrement = val;
+    }
+
     // Add Random point into ArrayList
     public void update(long elapsedTime) {
         Random pRandom = new Random();
 
-        for (int i = 0; i < 40; i++) {
-            if(pRandom.nextInt(10)==3) {
-                Star star = new Star(this.screenWidth, this.screenHeight);
-                this.starArray.add(star);
+        if(this.starArray.size()<MAX_COUNT) {
+            for (int i = 0; i < 40; i++) {
+                if (pRandom.nextInt(10) == 3) {
+                    Star star = new Star(this.screenWidth, this.screenHeight,speedIncrement);
+                    this.starArray.add(star);
+                }
             }
         }
 
@@ -32,6 +40,8 @@ public class Model {
         while (iterator.hasNext()) {
             Star pS = iterator.next();
             pS.moveStar(elapsedTime);
+            pS.spiral(screenWidth / 2, screenHeight / 2,0.001);
+
             if (pS.getDistance(screenWidth / 2, screenHeight / 2) > 1000) {
                 iterator.remove();
             }
