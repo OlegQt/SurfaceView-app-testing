@@ -8,7 +8,7 @@ public class Model {
     private ArrayList<Star> starArray = null;
     private int screenHeight, screenWidth;
     private final int MAX_COUNT = 17000; // Ограничить количество элементов массива
-    private double speedIncrement;
+    private double speedIncrement=20;
 
     public Model() {
         this.starArray = new ArrayList<>();
