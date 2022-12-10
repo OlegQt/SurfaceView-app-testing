@@ -3,7 +3,6 @@ package com.example.surfviewapp.engine;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Point;
 
 public class Render {
     private final Paint paint;
@@ -14,11 +13,11 @@ public class Render {
 
     private void cls(Canvas canvas){
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.DKGRAY);
         canvas.drawRect(0.0f,0.0f,canvas.getWidth(),canvas.getHeight(),this.paint);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(10.0f);
-        paint.setColor(Color.YELLOW);
+        paint.setColor(Color.BLACK);
         canvas.drawRect(0.0f,0.0f,canvas.getWidth(),canvas.getHeight(),this.paint);
     }
 
@@ -29,13 +28,9 @@ public class Render {
         paint.setStrokeWidth(5.0f);
         paint.setColor(Color.WHITE);
 
-        if(model.getPointsArray().size()>10)
+        for(Star pStar: model.getPointsArray())
         {
-            String str="jj";
-        }
-        for(Point point: model.getPointsArray())
-        {
-            canvas.drawPoint(point.x,point.y,this.paint);
+            canvas.drawPoint(pStar.getX(),pStar.getY(),this.paint);
         }
     }
 }
